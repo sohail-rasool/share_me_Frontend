@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { IoMdAdd, IoMdSearch } from 'react-icons/io';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/user/userSlice';
 
-const Navbar = ({ searchTerm, setSearchTerm, user }) => {
+const Navbar = ({ searchTerm, setSearchTerm }) => {
+  const user = useSelector(selectUser);
   const navigate = useNavigate();
 
   if (!user) return null;

@@ -2,10 +2,14 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { RiHomeFill } from 'react-icons/ri';
 import { IoIosArrowForward } from 'react-icons/io';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/user/userSlice';
 
 import logo from '../assets/logo.png';
 
-const Sidebar = ({ user, closeToggle }) => {
+const Sidebar = ({ closeToggle }) => {
+  const user = useSelector(selectUser);
+
   const isNotActiveStyle =
     'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duartion-200 ease-in-out capitalize';
   const isActiveStyle =
