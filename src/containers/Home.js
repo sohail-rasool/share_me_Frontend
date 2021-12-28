@@ -30,7 +30,7 @@ const Home = () => {
     const query = userQuery(googleId);
 
     client.fetch(query).then((data) => {
-      dispatch(setUser(data[0]));
+      dispatch(setUser(data[0] ? data[0] : ''));
     });
   }, []);
 

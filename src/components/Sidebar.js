@@ -10,6 +10,8 @@ import logo from '../assets/logo.png';
 const Sidebar = ({ closeToggle }) => {
   const user = useSelector(selectUser);
 
+  const { image, userName } = user;
+
   const isNotActiveStyle =
     'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duartion-200 ease-in-out capitalize';
   const isActiveStyle =
@@ -74,11 +76,11 @@ const Sidebar = ({ closeToggle }) => {
           onClick={handleCloseSidebar}
         >
           <img
-            src={user.image}
+            src={image}
             alt='user profile'
             className='w-10 h-10 rounded-full'
           />
-          <p>{user.userName}</p>
+          <p>{userName}</p>
         </Link>
       )}
     </aside>
